@@ -1,8 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
+import Search from "../components/search";
+import Tile from "../components/tile";
 
 const Home = () => {
-  return <div>HOOME</div>;
+  return (
+    <div>
+      <Search />
+      <Tile />
+    </div>
+  );
 };
 
 export default Home;
