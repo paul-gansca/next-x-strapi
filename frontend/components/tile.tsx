@@ -1,7 +1,8 @@
 import NextLink from "next/link";
 import NextImage from "next/image";
 
-const Tile = () => {
+const Tile = ({ team }) => {
+  const { name, project, developers } = team;
   return (
     <div>
       <NextLink href="/">
@@ -15,10 +16,12 @@ const Tile = () => {
           />
           <div className="flex flex-col justify-between p-4 leading-normal w-full">
             <h5 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 border-b border-slate-300">
-              All Stars
+              {name}
             </h5>
-            <p className="font-normal text-gray-700">Solaforce</p>
-            <p className="font-normal text-gray-700">3 Members</p>
+            <p className="font-normal text-gray-700">{project}</p>
+            <p className="font-normal text-gray-700">
+              {developers.data.length} Members
+            </p>
           </div>
         </div>
       </NextLink>
