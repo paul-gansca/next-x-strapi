@@ -1,7 +1,15 @@
 import NextImage from "next/image";
 import { getStrapiMedia } from "../lib/media";
 
-const Image = ({ image, classes, width, height }) => {
+interface ImageProps {
+  image: any;
+  classes?: string;
+  width?: number;
+  height?: number;
+}
+
+const Image = (props: ImageProps) => {
+  const { image, classes, width, height } = props;
   const {
     alternativeText,
     width: imageWidth,

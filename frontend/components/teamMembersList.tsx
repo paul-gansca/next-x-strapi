@@ -1,4 +1,5 @@
 import NextImage from "./image";
+import Tag from "./tag";
 
 const TeamMembersList = ({ developers }) => {
   return (
@@ -43,10 +44,10 @@ const TeamMembersList = ({ developers }) => {
                     {dev.attributes.name}
                   </span>
                 </th>
-                <td className="px-6 py-4">
-                  {dev.attributes.skills.data
-                    .map((skill) => skill.attributes.name)
-                    .join(", ")}
+                <td className="px-6 py-4 whitespace-pre">
+                  {dev.attributes.skills.data.map((skill) => (
+                    <Tag text={skill.attributes.name} />
+                  ))}
                 </td>
                 <td className="px-6 py-4">{dev.attributes.bio}</td>
               </tr>
