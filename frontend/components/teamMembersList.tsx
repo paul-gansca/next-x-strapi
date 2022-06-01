@@ -1,6 +1,6 @@
-import React from "react";
+import NextImage from "./image";
 
-const TeamMembersList = () => {
+const TeamMembersList = ({ developers }) => {
   return (
     <div className="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-between items-center mb-4">
@@ -16,7 +16,7 @@ const TeamMembersList = () => {
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Role
+                Skils
               </th>
               <th scope="col" className="px-6 py-3">
                 Bio
@@ -24,17 +24,33 @@ const TeamMembersList = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+            {developers.map((dev) => (
+              <tr
+                key={dev.id}
+                className="bg-white border-b hover:bg-gray-100 hover:cursor-pointer"
               >
-                {/* <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"> */}{" "}
-                Paul Gansca
-              </th>
-              <td className="px-6 py-4">Mid level</td>
-              <td className="px-6 py-4">Nice guy</td>
-            </tr>
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                >
+                  <NextImage
+                    classes="rounded-full"
+                    image={dev.attributes.profileImage}
+                    width={24}
+                    height={24}
+                  />
+                  <span className="align-super ml-1">
+                    {dev.attributes.name}
+                  </span>
+                </th>
+                <td className="px-6 py-4">
+                  {dev.attributes.skills.data
+                    .map((skill) => skill.attributes.name)
+                    .join(", ")}
+                </td>
+                <td className="px-6 py-4">{dev.attributes.bio}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
