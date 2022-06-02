@@ -1,4 +1,4 @@
-const Search = () => {
+const Search = ({ onSearch }) => {
   return (
     <div className="pb-6">
       <div className="relative">
@@ -23,6 +23,7 @@ const Search = () => {
           id="default-search"
           className="block p-6 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-slate-100 focus:outline-none shadow-md shadow-gray-400/50"
           placeholder="Search Teams"
+          onChange={onSearch}
           required
         />
         <button

@@ -7,7 +7,6 @@ import { getStrapiMedia } from "../../lib/media";
 const Team = ({ team }) => {
   const { name, project, bannerImage, developers } = team.attributes;
   const imageUrl = getStrapiMedia(bannerImage);
-  console.log(developers);
 
   const seo = {
     metaTitle: name,
