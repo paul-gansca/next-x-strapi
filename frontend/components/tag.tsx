@@ -9,11 +9,18 @@ const colours = [
   "bg-pink-100 text-pink-800",
 ];
 
-const Tag = ({ text }) => {
+const Tag = ({
+  text,
+  size = "text-xs",
+  isRandomColour = false,
+  givenColour = "bg-gray-100 text-gray-800",
+}) => {
   const colour = Math.floor(Math.random() * colours.length);
   return (
     <span
-      className={`${colours[colour]} text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`}
+      className={`${
+        isRandomColour ? colours[colour] : givenColour
+      } ${size} font-semibold mr-2 px-2.5 py-0.5 rounded`}
     >
       {text}
     </span>

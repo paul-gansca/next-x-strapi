@@ -3,15 +3,15 @@ import Tag from "./tag";
 
 const TeamMembersList = ({ developers }) => {
   return (
-    <div className="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <div className="p-4 w-full bg-white rounded-lg border shadow-md sm:p-8">
       <div className="flex justify-between items-center mb-4">
-        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
+        <h5 className="text-xl font-bold leading-none text-gray-900">
           Team members
         </h5>
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <table className="w-full text-sm text-left text-gray-500">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50">
             <tr>
               <th scope="col" className="px-6 py-3">
                 Name
@@ -46,10 +46,12 @@ const TeamMembersList = ({ developers }) => {
                 </th>
                 <td className="px-6 py-4 whitespace-pre">
                   {dev.attributes.skills.data.map((skill) => (
-                    <Tag text={skill.attributes.name} />
+                    <Tag text={skill.attributes.name} isRandomColour />
                   ))}
                 </td>
-                <td className="px-6 py-4">{dev.attributes.bio}</td>
+                <td className="px-6 py-4 min-w-[300px]">
+                  {dev.attributes.bio}
+                </td>
               </tr>
             ))}
           </tbody>
