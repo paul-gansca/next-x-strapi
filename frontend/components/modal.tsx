@@ -35,7 +35,7 @@ const Modal = ({ title, body, footer = null, topRightClose }) => {
               )}
             </div>
             {/* Modal body */}
-            <div className="p-6">{body}</div>
+            <div className="p-6 flex flex-row flex-wrap gap-[10px]">{body}</div>
             {/* Modal footer */}
             <div className="flex justify-between items-center p-6 space-x-2 rounded-b border-t border-gray-200">
               {footer}
