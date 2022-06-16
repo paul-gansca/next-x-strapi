@@ -1,3 +1,4 @@
+import ArticleCategories from "../components/articleCategories";
 import ArticlesList from "../components/articlesList";
 import Seo from "../components/seo";
 
@@ -13,10 +14,14 @@ const Blog = () => {
       <Seo seo={seo} />
       <div className="relative">
         <div className="text-center pt-16">
+          <h2 className="text-primary text-2xl font-extrabold tracking-wide uppercase">
+            Blog
+          </h2>
           <h2 className="text-primary font-extrabold tracking-wide uppercase">
             A collection of guides for using Next JS with Strapi
           </h2>
         </div>
+        <ArticleCategories />
         <ArticlesList
           articles={[
             {

@@ -1,5 +1,6 @@
 import { Layout } from "../components/layout";
 import "../styles/globals.css";
+import "../styles/article-categories.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (

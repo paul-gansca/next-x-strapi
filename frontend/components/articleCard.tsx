@@ -7,7 +7,7 @@ const ArticleCard = ({ article }) => {
   const { category, title, description, slug, locale, author } =
     article.attributes;
   return (
-    <div>
+    <div className="max-h-[300px] h-[300px] md:even:pt-8">
       <span className="inline-block py-2 px-2 rounded bg-secondary-lightest text-secondary text-xs font-medium tracking-widest">
         {category.data.attributes.name}
       </span>
